@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:MyLogin" 
+    x:Class="MyLogin.MainPage">
+    
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Bienvenido a mi APP" 
+               HorizontalOptions="Center" />
+        
+        <Image
+            Source="ONU.png"
+            HorizontalOptions="Center"
+            HeightRequest="200"
+            WidthRequest="200"/>
+         
+        <Grid
+            Margin="20,0,20,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="250" />
+          </Grid.ColumnDefinitions>
+            
+          
+            <Label 
+               Grid.Row="0"
+               Grid.Column="0" 
+               Text="Usuario: "
+               HorizontalOptions="End" />
+        
+            <Entry 
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="StartAndExpand"    
+                Placeholder="Ingresa tu usuario"
+                Text="{Binding usuario}"/> 
+            
+            <Label 
+                Grid.Row="1"
+               Grid.Column="0" 
+                HorizontalOptions="End"     
+                Text="Password: "/>
+        
+            <Entry 
+                Grid.Row="1"
+                Grid.Column="1" 
+                HorizontalOptions="StartAndExpand"    
+                Placeholder="Ingresa tu password"
+                IsPassword="true"
+                Text="{Binding password}"/>  
+                
+       </Grid>     
+        
+        <Button Text="Entrar"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Command="{Binding loginCommand}"/>
+        
+    </StackLayout>
+    
+</ContentPage>
